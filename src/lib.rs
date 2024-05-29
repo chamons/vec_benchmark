@@ -7,10 +7,14 @@ pub enum Event {
 }
 
 pub fn function_that_returns_vec() -> Vec<Event> {
-    vec![
-        Event::Large([0; LARGE_SIZE]),
-        Event::Small("asdf".to_string()),
-    ]
+    let mut events = vec![Event::Large([0; LARGE_SIZE])];
+    events.push(Event::Small("asdf".to_string()));
+    events
+}
+
+pub fn function_that_returns_single_vec() -> Vec<Event> {
+    let events = vec![Event::Large([0; LARGE_SIZE])];
+    events
 }
 
 #[derive(Debug)]
@@ -38,4 +42,8 @@ pub fn function_that_returns_enum() -> Events {
     let mut events = Events::new(Event::Large([0; LARGE_SIZE]));
     events.push(Event::Small("asdf".to_string()));
     events
+}
+
+pub fn function_that_returns_only_single_enum() -> Events {
+    Events::new(Event::Large([0; LARGE_SIZE]))
 }
