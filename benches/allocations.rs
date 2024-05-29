@@ -10,7 +10,7 @@ fn allocation_speed_benchmark(c: &mut Criterion) {
             // let v = function_that_returns_vec();
             // let v = function_that_returns_single_vec();
             // let v = function_that_returns_enum();
-            // let v = function_that_returns_only_single_enum();
+            let v = function_that_returns_only_single_enum();
             black_box(v);
         })
     });
